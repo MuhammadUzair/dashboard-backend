@@ -1,0 +1,34 @@
+version: '3.8'
+services:
+  mongodb:
+    image: mongodb/mongodb-community-server:6.0.8-ubuntu2204
+    ports:
+      - '27017:27017'
+    volumes:
+      - '.:/var/app/data/db'
+    networks:
+      - node-network
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+  server-app-api:
+    image: node:20.5-alpine
+    working_dir: /var
+    volumes:
+      - '.:/var'
+    depends_on:
+      - mongodb
+    command: npm run start:debug
+    env_file:
+      - ./.env
+    ports:
+      - '3002:3002'
+    networks:
+      - node-network
+
+volumes:
+  dbdata6:
+
+networks:
+  node-network:
+    driver: bridge
