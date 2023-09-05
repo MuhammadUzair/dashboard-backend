@@ -1,6 +1,6 @@
 import { Controller, Get, Post, Body } from '@nestjs/common';
 import { AnalyticsService } from './analytics.service';
-import { CreateAnalyticsDto } from './dto/create-Analytics.dto';
+import { CreateAnalyticsDto } from './dto/create-analytics.dto';
 
 @Controller('analytics')
 export class AnalyticsController {

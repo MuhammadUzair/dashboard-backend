@@ -7,7 +7,7 @@
 
 ## Description
 
-This repository user service API's.
+This repository used for dashboad API's.
 
 ## Installation
 
