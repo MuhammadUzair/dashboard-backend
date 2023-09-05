@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { MongoRepository } from 'typeorm';
 
-import { Analytics } from 'src/entities/Analytics';
+import { Analytics } from '../../entities/Analytics';
 import { CreateAnalyticsDto } from './dto/create-analytics.dto';
 
 @Injectable()
