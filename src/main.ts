@@ -19,7 +19,6 @@ async function bootstrap() {
   }
 
   await app.listen(port);
-  console.log('ENV ', process.env.DATBASE_URL);
 
   console.log('server running on port ', port);
 }
