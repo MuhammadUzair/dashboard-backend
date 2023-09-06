@@ -8,4 +8,5 @@ export const ORM_MODULE_CONFIG: TypeOrmModuleOptions = {
   synchronize: true, // set false for production
   logging: process.env.NODE_ENV === 'development',
   entities: [`dist/entities/*.{ts,js}`],
+  autoLoadEntities: true,
 };

@@ -3,15 +3,15 @@ import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 import { AppModule } from './app.module';
 
 async function bootstrap() {
-  const port = process.env.PORT || 3001;
+  const port = 3002;
   const env = process.env.NODE_ENV;
   const app = await NestFactory.create(AppModule);
 
   //Setup Sawgger for local development
   if (env === 'development') {
     const config = new DocumentBuilder()
-      .setTitle('Shipment App')
-      .setDescription('The Shipment App user service')
+      .setTitle('Dashboard App')
+      .setDescription('Dashboard App')
       .setVersion('1.0')
       .build();
     const document = SwaggerModule.createDocument(app, config);
@@ -19,6 +19,7 @@ async function bootstrap() {
   }
 
   await app.listen(port);
+  console.log('ENV ', process.env.DATBASE_URL);
 
   console.log('server running on port ', port);
 }

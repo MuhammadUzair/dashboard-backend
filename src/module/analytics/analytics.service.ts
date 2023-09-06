@@ -4,6 +4,7 @@ import { MongoRepository } from 'typeorm';
 
 import { Analytics } from '../../entities/Analytics';
 import { CreateAnalyticsDto } from './dto/create-analytics.dto';
+import { SeedData } from '../../scripts/seedData';
 
 @Injectable()
 export class AnalyticsService {
@@ -18,5 +19,9 @@ export class AnalyticsService {
 
   async findAll(): Promise<Analytics[]> {
     return this.analyticsRepository.find({});
+  }
+
+  async seedAnalytics(): Promise<void> {
+    await this.analyticsRepository.insert(SeedData);
   }
 }

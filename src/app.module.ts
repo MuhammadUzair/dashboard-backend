@@ -4,8 +4,8 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { AnalyticsModule } from './module/analytics/analytics.module';
-import { ORM_MODULE_CONFIG } from 'src/configration/OrmConfig';
-import { HttpLoggerMiddleware } from 'src/middleware/loggerMiddleware';
+import { ORM_MODULE_CONFIG } from './configration/OrmConfig';
+import { HttpLoggerMiddleware } from './middleware/loggerMiddleware';
 
 @Module({
   imports: [
