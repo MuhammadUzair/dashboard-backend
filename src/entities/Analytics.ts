@@ -1,4 +1,5 @@
 import { Entity, ObjectIdColumn, ObjectId, Column } from 'typeorm';
+import { SalesStatsArea } from './SalesStatsArea';
 
 @Entity()
 export class Analytics {
@@ -7,4 +8,7 @@ export class Analytics {
 
   @Column()
   name: string;
+
+  @Column(() => SalesStatsArea)
+  salesStatsArea: SalesStatsArea;
 }
