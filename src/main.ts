@@ -10,8 +10,8 @@ async function bootstrap() {
   //Setup Sawgger for local development
   if (env === 'development') {
     const config = new DocumentBuilder()
-      .setTitle('Shipment App')
-      .setDescription('The Shipment App user service')
+      .setTitle('Dashboard App')
+      .setDescription('Dashboard App')
       .setVersion('1.0')
       .build();
     const document = SwaggerModule.createDocument(app, config);
